@@ -12,9 +12,8 @@ public class AccomodationManagement
         
         Scanner sc = new Scanner(System.in);
         int option;
-        AccomodationManager a = new AccomodationManager();
+        AccomodationManager a = AccomodationManager.getAccomodationManager();
         a.readAccomodations("accomodations.txt");
-        System.out.println(Accomodation.getCheckOutDate("22/05/2019", 4));
         
         do 
         {

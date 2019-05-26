@@ -1,21 +1,48 @@
 package accomodation.types;
 
+/**
+ * Class to define accomodation
+ * @author Pablo
+ */
 public abstract class Accomodation 
 {
     private String name;
     private int price;
 
+    /**
+     * Instanties a object Accomodation
+     * @param name name of accomodation
+     * @param price price of accomodation
+     */
     public Accomodation(String name, int price) 
     {
         this.name = name;
         this.price = price;
     }
 
+    /**
+     * @return name of accomodation 
+     */
     public String getName(){return name;}
-    public float getPrice(){return price;}
+    
+    /**
+     * @return price per night of accomodation
+     */
+    public int getPrice(){return price;}
 
+    /**
+     * calculate the total price of the accommodation
+     * @param nights nights that the client will be staying
+     * @return total price of the accommodation
+     */
     public int getTotal(int nights){return nights*price;}
     
+    /**
+     * calculates the departure date of the accommodation
+     * @param checkInDate date when accommodation begins
+     * @param nights nights that the client will be staying
+     * @return date in which the accommodation ends.
+     */
     public static String getCheckOutDate(String checkInDate, 
             int nights)
     {
@@ -72,6 +99,9 @@ public abstract class Accomodation
         return date;
     }
     
+    /**
+     * @return the properties of the accommodation
+     */
     @Override
     public String toString() 
     {

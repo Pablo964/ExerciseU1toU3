@@ -13,9 +13,18 @@ public class AccomodationManager
 {
     protected List<Accomodation> accomodations;
     
-    public AccomodationManager() 
+    private static AccomodationManager myAccomodationManager;
+    
+    private AccomodationManager() 
     {
         accomodations = new ArrayList<>();
+    }
+    public static AccomodationManager getAccomodationManager()
+    {
+        if (myAccomodationManager == null)
+            myAccomodationManager = new AccomodationManager();
+        
+        return myAccomodationManager;
     }
     
     private void AddAccomodation(Accomodation newAccomodation)
@@ -27,7 +36,7 @@ public class AccomodationManager
         try
         {            
             File archivo = new File (fileName);
-            FileReader fr = new FileReader (fileName);
+            FileReader fr = new FileReader (archivo);
             BufferedReader br = new BufferedReader(fr);
 
             String line;
