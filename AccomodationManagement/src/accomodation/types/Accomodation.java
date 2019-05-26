@@ -3,7 +3,7 @@ package accomodation.types;
 public abstract class Accomodation 
 {
     private String name;
-    private int price;
+    private float price;
 
     public Accomodation(String name, int price) 
     {
@@ -12,9 +12,9 @@ public abstract class Accomodation
     }
 
     public String getName(){return name;}
-    public int getPrice(){return price;}
+    public float getPrice(){return price;}
 
-    public int getTotal(int nights){return nights*price;}
+    public float getTotal(int nights){return nights*price;}
     
     public static String getCheckOutDate(String checkInDate, 
             int nights)
@@ -71,7 +71,7 @@ public abstract class Accomodation
     @Override
     public String toString() 
     {
-        return "Accomodation{" + "name=" + name + ", price=" + 
-                price + '}';
+        return "Accomodation;" + "name=" + name + "; price=" + 
+                price + ';';
     }
 }
