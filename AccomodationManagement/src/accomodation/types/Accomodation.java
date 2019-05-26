@@ -3,7 +3,7 @@ package accomodation.types;
 public abstract class Accomodation 
 {
     private String name;
-    private float price;
+    private int price;
 
     public Accomodation(String name, int price) 
     {
@@ -14,7 +14,7 @@ public abstract class Accomodation
     public String getName(){return name;}
     public float getPrice(){return price;}
 
-    public float getTotal(int nights){return nights*price;}
+    public int getTotal(int nights){return nights*price;}
     
     public static String getCheckOutDate(String checkInDate, 
             int nights)
@@ -28,8 +28,7 @@ public abstract class Accomodation
         String zeroInMonth;
         
         day += nights;
-        
-        while((day >= numDays)) 
+        do 
         {
             switch (month) 
             {
@@ -50,9 +49,14 @@ public abstract class Accomodation
                     }
                     break;
             }
-            day -= numDays;
-            month++;       
+            if (day > numDays) 
+            {
+                day -= numDays;
+                month++;  
+            }
+     
         }
+        while ((day > numDays));
         
         if (day < 10)
             zeroInDay = "0";

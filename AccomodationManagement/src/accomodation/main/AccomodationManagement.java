@@ -9,10 +9,12 @@ public class AccomodationManagement
 {
     public static void main(String[] args) 
     {
+        
         Scanner sc = new Scanner(System.in);
         int option;
         AccomodationManager a = new AccomodationManager();
         a.readAccomodations("accomodations.txt");
+        System.out.println(Accomodation.getCheckOutDate("22/05/2019", 4));
         
         do 
         {
